@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "gubca-examcentres" },
+      { name: "description", content: "Exam Hub provides a static, mobile-friendly web page for Gujarat University Practical Exam Centres." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "gubca-examcentres" },
+      { property: "og:description", content: "Exam Hub provides a static, mobile-friendly web page for Gujarat University Practical Exam Centres." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "gubca-examcentres" },
+      { name: "twitter:description", content: "Exam Hub provides a static, mobile-friendly web page for Gujarat University Practical Exam Centres." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3cb09801-d562-43c5-85a8-611af64eab3c/id-preview-0d3390c7--d70ea6c1-1f7c-4ec6-ad76-29d352cabcd0.lovable.app-1778766106154.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3cb09801-d562-43c5-85a8-611af64eab3c/id-preview-0d3390c7--d70ea6c1-1f7c-4ec6-ad76-29d352cabcd0.lovable.app-1778766106154.png" },
     ],
     links: [
       {
