@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Gujarat University Practical Exam Centres</title>
+<meta name="description" content="Find your Gujarat University practical exam centre and open Google Maps navigation instantly." />
+<meta name="theme-color" content="#1e40af" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231e40af'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='system-ui' font-size='34' font-weight='700' fill='white'%3EGU%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#f8fafc; --fg:#0f172a; --muted:#64748b; --card:#ffffff;
+    --border:#e2e8f0; --primary:#1e40af; --primary-2:#2563eb; --primary-soft:#eff6ff;
+    --shadow:0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0b1220; --fg:#e6edf7; --muted:#94a3b8; --card:#111a2e;
+      --border:#1f2a44; --primary:#60a5fa; --primary-2:#3b82f6; --primary-soft:#10213f;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none}
+  header{padding:32px 16px 20px;text-align:center;
+    background:linear-gradient(180deg,var(--primary-soft),transparent);
+    border-bottom:1px solid var(--border);}
+  .badge{display:inline-flex;align-items:center;justify-content:center;
+    width:48px;height:48px;border-radius:14px;background:var(--primary);
+    color:#fff;font-weight:800;margin-bottom:10px;box-shadow:var(--shadow)}
+  h1{font-size:22px;margin:6px 0 6px;color:var(--primary);letter-spacing:-.01em}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  .search-wrap{position:sticky;top:0;z-index:20;background:color-mix(in oklab,var(--bg) 85%,transparent);
+    backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border)}
+  .search{max-width:960px;margin:0 auto;padding:12px 16px;}
+  .search input{width:100%;padding:12px 14px 12px 40px;border-radius:12px;
+    border:1px solid var(--border);background:var(--card);color:var(--fg);
+    font-size:15px;outline:none;box-shadow:var(--shadow);
+    background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:12px 50%;}
+  .search input:focus{border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in oklab,var(--primary) 25%,transparent)}
+  .count{font-size:12px;color:var(--muted);margin-top:6px}
+  main{max-width:960px;margin:0 auto;padding:16px;}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:18px;box-shadow:var(--shadow);transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    opacity:0;transform:translateY(8px);animation:rise .4s ease forwards;}
+  .card:hover{transform:translateY(-2px);border-color:color-mix(in oklab,var(--primary) 40%,var(--border));}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .code{display:inline-block;background:var(--primary-soft);color:var(--primary);
+    font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;letter-spacing:.02em}
+  h2{font-size:16px;margin:8px 0 6px;line-height:1.35}
+  .addr{display:flex;gap:8px;align-items:flex-start;color:var(--muted);font-size:14px;margin:0}
+  .addr svg{flex:0 0 auto;margin-top:2px;color:var(--primary)}
+  .actions{display:flex;gap:8px;margin-top:14px}
+  .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--primary);color:#fff;font-weight:600;font-size:14px;
+    padding:11px 14px;border-radius:12px;border:0;cursor:pointer;
+    transition:opacity .15s ease, transform .05s ease;}
+  .btn:hover{opacity:.92}
+  .btn:active{transform:scale(.98)}
+  .icon-btn{width:42px;height:42px;border-radius:12px;border:1px solid var(--border);
+    background:var(--card);color:var(--muted);display:inline-flex;align-items:center;
+    justify-content:center;cursor:pointer;transition:color .15s,border-color .15s}
+  .icon-btn:hover{color:var(--primary);border-color:color-mix(in oklab,var(--primary) 40%,var(--border))}
+  .empty{padding:40px;text-align:center;color:var(--muted);
+    border:1px dashed var(--border);border-radius:16px}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 16px 28px}
+  #top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:999px;
+    background:var(--primary);color:#fff;border:0;cursor:pointer;display:none;
+    align-items:center;justify-content:center;box-shadow:var(--shadow);z-index:30}
+  #top.show{display:inline-flex}
+  .toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);
+    background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:999px;
+    font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+  .toast.show{opacity:.95}
+</style>
+</head>
+<body>
+<header>
+  <div class="badge">GU</div>
+  <h1>Gujarat University Practical Exam Centres</h1>
+  <p>Tap a centre to open Google Maps navigation</p>
+</header>
+
+<div class="search-wrap">
+  <div class="search">
+    <input id="q" type="search" inputmode="search" placeholder="Search by college, area, or code…" autocomplete="off" />
+    <div class="count" id="count"></div>
+  </div>
+</div>
+
+<main>
+  <div id="grid" class="grid"></div>
+</main>
+
+<footer>Tap any centre to launch navigation directly in Google Maps.</footer>
+<button id="top" aria-label="Back to top">↑</button>
+<div id="toast" class="toast">Address copied</div>
+
+<script>
+const colleges = [
+  {code:"072",name:"C M Desai Arts & Commerce College",address:"Mandal - Viramgam Rd, Axar Nagar, Viramgam - 382150"},
+  {code:"086",name:"Bhavan's R A College of Science",address:"Vidyagauri Marg, Old City, Khanpur, Ahmedabad - 1"},
+  {code:"204",name:"Arts & Commerce College",address:"Pulin Society Part 2, Naroda, Ahmedabad - 382325"},
+  {code:"241",name:"Som Lalit Inst. of Computer Applications",address:"SLIMS Campus, University Road, Navrangpura, Ahmedabad - 9"},
+  {code:"243",name:"Navgujarat College of Computer Appln.",address:"Ashram Road, Opp. Gujarat Vidhyapith, Ahmedabad - 14"},
+  {code:"248",name:"L J College of Computer Appln.",address:"IIM Rd, Mahavir Nagar Society, Vastrapur, Ahmedabad - 15"},
+  {code:"259",name:"Lokmanya College of Computer Applications",address:"Shivranjani Cross Rd, Satellite, Ahmedabad"},
+  {code:"267",name:"Shri P D Pandya Insti. of Comp. Appln",address:"Pandya Education Campus, Vatva, Ahmedabad"},
+  {code:"274",name:"SPV Mahila Vanijya Mahavidyalaya",address:"Patelwadi Ambar Cinema Road, Bapunagar, Ahmedabad - 45"},
+  {code:"288",name:"J G College of Comp. Appln",address:"ASIA Campus, Drive-in Rd., Ahmedabad - 54"},
+  {code:"492",name:"AAKMS BCA College (Chaudhari College)",address:"Opp. S.T. Depot, Sector 7, Gandhinagar - 382007"},
+  {code:"510",name:"Neeldeep Colg. of Commerce",address:"Science City Rd, Sola, Ahmedabad - 380060"},
+  {code:"622",name:"Shree Sahajanand Colg. of Sci.",address:"Sokli - 382150, Ta-Viramgam"},
+  {code:"721",name:"Navgujarat BCA College",address:"Sector 28, Gandhinagar - 380060"},
+  {code:"722",name:"Kalol Insti. of Computer Studies",address:"Kalol - 382721, Gandhinagar"},
+  {code:"723",name:"Kameshwar BCA College",address:"Sargasan, Gandhinagar - 384221"},
+  {code:"724",name:"Asia Pacific BCA College",address:"Bhoyani - 382145, Dist. Ahmedabad"},
+  {code:"725",name:"Khyati School of Computer Appli.",address:"Plot No. 116, Palodia, Ahmedabad - 58"},
+  {code:"730",name:"President Insti. of Comp. Appli.",address:"Shayona Study Campus, Ghatlodia, Ahmedabad - 61"},
+  {code:"761",name:"Govt BCA Colg (Self Fin)",address:"KK Shastri Campus, Khokhra Rd, Maninagar, Ahmedabad - 08"},
+  {code:"770",name:"Shri Kirithbai Dahyabhai Patel (Devgadh) Umiya B.C.A College",address:"Umiya Campus, Sola, Ahmedabad - 60"},
+];
+colleges.forEach(c => c.maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(c.name + " " + c.address));
+
+const PIN = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
+const NAV = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>';
+const COPY = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+
+const grid = document.getElementById("grid");
+const countEl = document.getElementById("count");
+const q = document.getElementById("q");
+const toast = document.getElementById("toast");
+const topBtn = document.getElementById("top");
+
+function escape(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+
+function render(list){
+  countEl.textContent = list.length + " centre" + (list.length===1?"":"s") + " found";
+  if(!list.length){
+    grid.innerHTML = '<div class="empty">No exam centre matches your search.</div>';
+    return;
+  }
+  grid.innerHTML = list.map((c,i)=>`
+    <article class="card" style="animation-delay:${Math.min(i*30,300)}ms">
+      <span class="code">Code ${c.code}</span>
+      <h2>${escape(c.name)}</h2>
+      <a class="addr" href="${c.maps}" target="_blank" rel="noopener">${PIN}<span>${escape(c.address)}</span></a>
+      <div class="actions">
+        <a class="btn" href="${c.maps}" target="_blank" rel="noopener">${NAV} Open in Google Maps</a>
+        <button class="icon-btn" data-copy="${escape(c.name+' — '+c.address)}" aria-label="Copy address">${COPY}</button>
+      </div>
+    </article>`).join("");
+}
+render(colleges);
+
+q.addEventListener("input", () => {
+  const v = q.value.trim().toLowerCase();
+  render(!v ? colleges : colleges.filter(c =>
+    c.name.toLowerCase().includes(v) || c.address.toLowerCase().includes(v) || c.code.includes(v)));
+});
+
+grid.addEventListener("click", async e => {
+  const btn = e.target.closest("[data-copy]");
+  if(!btn) return;
+  try{
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    toast.classList.add("show");
+    setTimeout(()=>toast.classList.remove("show"), 1400);
+  }catch{}
+});
+
+window.addEventListener("scroll", () => {
+  topBtn.classList.toggle("show", window.scrollY > 400);
+}, {passive:true});
+topBtn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+</script>
+</body>
+</html>
