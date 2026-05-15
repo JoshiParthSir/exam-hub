@@ -138,7 +138,7 @@ function Index() {
                       Code {c.code} · {c.short}
                     </span>
                     <h2 className="mt-2 text-base sm:text-lg font-semibold leading-snug text-foreground">
-                      {c.name}
+                      {c.name} ({c.short})
                     </h2>
                     <a
                       href={c.maps}
