@@ -66,7 +66,8 @@ function Index() {
       (c) =>
         c.name.toLowerCase().includes(q) ||
         c.address.toLowerCase().includes(q) ||
-        c.code.includes(q),
+        c.code.includes(q) ||
+        c.short.toLowerCase().includes(q),
     );
   }, [query]);
 
