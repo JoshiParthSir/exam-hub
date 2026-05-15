@@ -148,7 +148,7 @@ function render(list){
   }
   grid.innerHTML = list.map((c,i)=>`
     <article class="card" style="animation-delay:${Math.min(i*30,300)}ms">
-      <span class="code">Code ${c.code}</span>
+      <span class="code">Code ${c.code} · ${c.short}</span>
       <h2>${escape(c.name)}</h2>
       <a class="addr" href="${c.maps}" target="_blank" rel="noopener">${PIN}<span>${escape(c.address)}</span></a>
       <div class="actions">
