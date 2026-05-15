@@ -162,7 +162,7 @@ render(colleges);
 q.addEventListener("input", () => {
   const v = q.value.trim().toLowerCase();
   render(!v ? colleges : colleges.filter(c =>
-    c.name.toLowerCase().includes(v) || c.address.toLowerCase().includes(v) || c.code.includes(v)));
+    c.name.toLowerCase().includes(v) || c.address.toLowerCase().includes(v) || c.code.includes(v) || c.short.toLowerCase().includes(v)));
 });
 
 grid.addEventListener("click", async e => {
