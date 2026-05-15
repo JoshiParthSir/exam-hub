@@ -18,33 +18,34 @@ export const Route = createFileRoute("/")({
 
 type College = {
   code: string;
+  short: string;
   name: string;
   address: string;
   maps: string;
 };
 
 const colleges: College[] = [
-  { code: "072", name: "C M Desai Arts & Commerce College", address: "Mandal - Viramgam Rd, Axar Nagar, Viramgam - 382150", maps: "https://www.google.com/maps/search/?api=1&query=C+M+Desai+Arts+%26+Commerce+College+Viramgam+382150" },
-  { code: "086", name: "Bhavan's R A College of Science", address: "Vidyagauri Marg, Old City, Khanpur, Ahmedabad - 1", maps: "https://www.google.com/maps/search/?api=1&query=Bhavan%27s+R+A+College+of+Science+Khanpur+Ahmedabad" },
-  { code: "204", name: "Arts & Commerce College", address: "Pulin Society Part 2, Naroda, Ahmedabad - 382325", maps: "https://www.google.com/maps/search/?api=1&query=Arts+%26+Commerce+College+Naroda+Ahmedabad+382325" },
-  { code: "241", name: "Som Lalit Inst. of Computer Applications", address: "SLIMS Campus, University Road, Navrangpura, Ahmedabad - 9", maps: "https://www.google.com/maps/search/?api=1&query=Som+Lalit+Institute+of+Computer+Applications+Ahmedabad" },
-  { code: "243", name: "Navgujarat College of Computer Appln.", address: "Ashram Road, Opp. Gujarat Vidhyapith, Ahmedabad - 14", maps: "https://www.google.com/maps/search/?api=1&query=Navgujarat+College+of+Computer+Applications+Ahmedabad+14" },
-  { code: "248", name: "L J College of Computer Appln.", address: "IIM Rd, Mahavir Nagar Society, Vastrapur, Ahmedabad - 15", maps: "https://www.google.com/maps/search/?api=1&query=L+J+College+of+Computer+Applications+Vastrapur+Ahmedabad" },
-  { code: "259", name: "Lokmanya College of Computer Applications", address: "Shivranjani Cross Rd, Satellite, Ahmedabad", maps: "https://www.google.com/maps/search/?api=1&query=Lokmanya+College+of+Computer+Applications+Ahmedabad" },
-  { code: "267", name: "Shri P D Pandya Insti. of Comp. Appln", address: "Pandya Education Campus, Vatva, Ahmedabad", maps: "https://www.google.com/maps/search/?api=1&query=Shri+P+D+Pandya+Institute+of+Computer+Applications+Vatva+Ahmedabad" },
-  { code: "274", name: "SPV Mahila Vanijya Mahavidyalaya", address: "Patelwadi Ambar Cinema Road, Bapunagar, Ahmedabad - 45", maps: "https://www.google.com/maps/search/?api=1&query=S+P+V+Mahila+Vanijya+Mahavidyalaya+Bapunagar+Ahmedabad" },
-  { code: "288", name: "J G College of Comp. Appln", address: "ASIA Campus, Drive-in Rd., Ahmedabad - 54", maps: "https://www.google.com/maps/search/?api=1&query=J+G+College+of+Computer+Application+Drive-in+Rd+Ahmedabad" },
-  { code: "492", name: "AAKMS BCA College (Chaudhari College)", address: "Opp. S.T. Depot, Sector 7, Gandhinagar - 382007", maps: "https://www.google.com/maps/search/?api=1&query=Chaudhari+College+of+Computer+Application+Sector+7+Gandhinagar+382007" },
-  { code: "510", name: "Neeldeep Colg. of Commerce", address: "Science City Rd, Sola, Ahmedabad - 380060", maps: "https://www.google.com/maps/search/?api=1&query=Neeldeep+College+of+Commerce+Sola+Science+City+Rd+Ahmedabad" },
-  { code: "622", name: "Shree Sahajanand Colg. of Sci.", address: "Sokli - 382150, Ta-Viramgam", maps: "https://www.google.com/maps/search/?api=1&query=Shree+Sahajanand+College+of+Science+Sokli+Viramgam+382150" },
-  { code: "721", name: "Navgujarat BCA College", address: "Sector 28, Gandhinagar - 380060", maps: "https://www.google.com/maps/search/?api=1&query=Navgujarat+BCA+College+Sector+28+Gandhinagar" },
-  { code: "722", name: "Kalol Insti. of Computer Studies", address: "Kalol - 382721, Gandhinagar", maps: "https://www.google.com/maps/search/?api=1&query=Kalol+Institute+of+Computer+Studies+Kalol+Gandhinagar" },
-  { code: "723", name: "Kameshwar BCA College", address: "Sargasan, Gandhinagar - 384221", maps: "https://www.google.com/maps/search/?api=1&query=Kameshwar+BCA+College+Sargasan+Gandhinagar" },
-  { code: "724", name: "Asia Pacific BCA College", address: "Bhoyani - 382145, Dist. Ahmedabad", maps: "https://www.google.com/maps/search/?api=1&query=Asia+Pacific+BCA+College+Bhoyani+Ahmedabad" },
-  { code: "725", name: "Khyati School of Computer Appli.", address: "Plot No. 116, Palodia, Ahmedabad - 58", maps: "https://www.google.com/maps/search/?api=1&query=Khyati+School+of+Computer+Application+Palodia+Ahmedabad" },
-  { code: "730", name: "President Insti. of Comp. Appli.", address: "Shayona Study Campus, Ghatlodia, Ahmedabad - 61", maps: "https://www.google.com/maps/search/?api=1&query=President+Institute+of+Computer+Application+Ghatlodia+Ahmedabad" },
-  { code: "761", name: "Govt BCA Colg (Self Fin)", address: "KK Shastri Campus, Khokhra Rd, Maninagar, Ahmedabad - 08", maps: "https://www.google.com/maps/search/?api=1&query=Govt+BCA+College+Khokhra+Rd+Maninagar+Ahmedabad" },
-  { code: "770", name: "Shri Kirithbai Dahyabhai Patel (Devgadh) Umiya B.C.A College", address: "Umiya Campus, Sola, Ahmedabad - 60", maps: "https://www.google.com/maps/search/?api=1&query=Shri+Kirithbai+Dahyabhai+Patel+Umiya+BCA+College+Sola+Ahmedabad" },
+  { code: "072", short: "DCMBCA", name: "C M Desai Arts & Commerce College", address: "Mandal - Viramgam Rd, Axar Nagar, Viramgam - 382150", maps: "https://www.google.com/maps/search/?api=1&query=C+M+Desai+Arts+%26+Commerce+College+Viramgam+382150" },
+  { code: "086", short: "BRACS", name: "Bhavan's R A College of Science", address: "Vidyagauri Marg, Old City, Khanpur, Ahmedabad - 1", maps: "https://www.google.com/maps/search/?api=1&query=Bhavan%27s+R+A+College+of+Science+Khanpur+Ahmedabad" },
+  { code: "204", short: "APCC", name: "Arts & Commerce College", address: "Pulin Society Part 2, Naroda, Ahmedabad - 382325", maps: "https://www.google.com/maps/search/?api=1&query=Arts+%26+Commerce+College+Naroda+Ahmedabad+382325" },
+  { code: "241", short: "SLICA", name: "Som Lalit Inst. of Computer Applications", address: "SLIMS Campus, University Road, Navrangpura, Ahmedabad - 9", maps: "https://www.google.com/maps/search/?api=1&query=Som+Lalit+Institute+of+Computer+Applications+Ahmedabad" },
+  { code: "243", short: "NGCCA", name: "Navgujarat College of Computer Appln.", address: "Ashram Road, Opp. Gujarat Vidhyapith, Ahmedabad - 14", maps: "https://www.google.com/maps/search/?api=1&query=Navgujarat+College+of+Computer+Applications+Ahmedabad+14" },
+  { code: "248", short: "LJCCA", name: "L J College of Computer Appln.", address: "IIM Rd, Mahavir Nagar Society, Vastrapur, Ahmedabad - 15", maps: "https://www.google.com/maps/search/?api=1&query=L+J+College+of+Computer+Applications+Vastrapur+Ahmedabad" },
+  { code: "259", short: "LCCA", name: "Lokmanya College of Computer Applications", address: "Shivranjani Cross Rd, Satellite, Ahmedabad", maps: "https://www.google.com/maps/search/?api=1&query=Lokmanya+College+of+Computer+Applications+Ahmedabad" },
+  { code: "267", short: "PDPICA", name: "Shri P D Pandya Insti. of Comp. Appln", address: "Pandya Education Campus, Vatva, Ahmedabad", maps: "https://www.google.com/maps/search/?api=1&query=Shri+P+D+Pandya+Institute+of+Computer+Applications+Vatva+Ahmedabad" },
+  { code: "274", short: "SPMBCA", name: "SPV Mahila Vanijya Mahavidyalaya", address: "Patelwadi Ambar Cinema Road, Bapunagar, Ahmedabad - 45", maps: "https://www.google.com/maps/search/?api=1&query=S+P+V+Mahila+Vanijya+Mahavidyalaya+Bapunagar+Ahmedabad" },
+  { code: "288", short: "JGBCA", name: "J G College of Comp. Appln", address: "ASIA Campus, Drive-in Rd., Ahmedabad - 54", maps: "https://www.google.com/maps/search/?api=1&query=J+G+College+of+Computer+Application+Drive-in+Rd+Ahmedabad" },
+  { code: "492", short: "AAKMS", name: "AAKMS BCA College (Chaudhari College)", address: "Opp. S.T. Depot, Sector 7, Gandhinagar - 382007", maps: "https://www.google.com/maps/search/?api=1&query=Chaudhari+College+of+Computer+Application+Sector+7+Gandhinagar+382007" },
+  { code: "510", short: "NDCBCA", name: "Neeldeep Colg. of Commerce", address: "Science City Rd, Sola, Ahmedabad - 380060", maps: "https://www.google.com/maps/search/?api=1&query=Neeldeep+College+of+Commerce+Sola+Science+City+Rd+Ahmedabad" },
+  { code: "622", short: "SSCS", name: "Shree Sahajanand Colg. of Sci.", address: "Sokli - 382150, Ta-Viramgam", maps: "https://www.google.com/maps/search/?api=1&query=Shree+Sahajanand+College+of+Science+Sokli+Viramgam+382150" },
+  { code: "721", short: "NAVGUJBCA", name: "Navgujarat BCA College", address: "Sector 28, Gandhinagar - 380060", maps: "https://www.google.com/maps/search/?api=1&query=Navgujarat+BCA+College+Sector+28+Gandhinagar" },
+  { code: "722", short: "KICA", name: "Kalol Insti. of Computer Studies", address: "Kalol - 382721, Gandhinagar", maps: "https://www.google.com/maps/search/?api=1&query=Kalol+Institute+of+Computer+Studies+Kalol+Gandhinagar" },
+  { code: "723", short: "KBCA", name: "Kameshwar BCA College", address: "Sargasan, Gandhinagar - 384221", maps: "https://www.google.com/maps/search/?api=1&query=Kameshwar+BCA+College+Sargasan+Gandhinagar" },
+  { code: "724", short: "ASIABCA", name: "Asia Pacific BCA College", address: "Bhoyani - 382145, Dist. Ahmedabad", maps: "https://www.google.com/maps/search/?api=1&query=Asia+Pacific+BCA+College+Bhoyani+Ahmedabad" },
+  { code: "725", short: "KHYATIBCA", name: "Khyati School of Computer Appli.", address: "Plot No. 116, Palodia, Ahmedabad - 58", maps: "https://www.google.com/maps/search/?api=1&query=Khyati+School+of+Computer+Application+Palodia+Ahmedabad" },
+  { code: "730", short: "PRSDTBCA", name: "President Insti. of Comp. Appli.", address: "Shayona Study Campus, Ghatlodia, Ahmedabad - 61", maps: "https://www.google.com/maps/search/?api=1&query=President+Institute+of+Computer+Application+Ghatlodia+Ahmedabad" },
+  { code: "761", short: "KKSICA", name: "Govt BCA Colg (Self Fin)", address: "KK Shastri Campus, Khokhra Rd, Maninagar, Ahmedabad - 08", maps: "https://www.google.com/maps/search/?api=1&query=Govt+BCA+College+Khokhra+Rd+Maninagar+Ahmedabad" },
+  { code: "770", short: "KDPBCA", name: "Shri Kirithbai Dahyabhai Patel (Devgadh) Umiya B.C.A College", address: "Umiya Campus, Sola, Ahmedabad - 60", maps: "https://www.google.com/maps/search/?api=1&query=Shri+Kirithbai+Dahyabhai+Patel+Umiya+BCA+College+Sola+Ahmedabad" },
 ];
 
 function Index() {
@@ -65,7 +66,8 @@ function Index() {
       (c) =>
         c.name.toLowerCase().includes(q) ||
         c.address.toLowerCase().includes(q) ||
-        c.code.includes(q),
+        c.code.includes(q) ||
+        c.short.toLowerCase().includes(q),
     );
   }, [query]);
 
@@ -133,7 +135,7 @@ function Index() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <span className="inline-block rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
-                      Code {c.code}
+                      Code {c.code} · {c.short}
                     </span>
                     <h2 className="mt-2 text-base sm:text-lg font-semibold leading-snug text-foreground">
                       {c.name}
