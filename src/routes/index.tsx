@@ -135,7 +135,7 @@ function Index() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <span className="inline-block rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
-                      Code {c.code}
+                      Code {c.code} · {c.short}
                     </span>
                     <h2 className="mt-2 text-base sm:text-lg font-semibold leading-snug text-foreground">
                       {c.name}
